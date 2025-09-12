@@ -4,16 +4,18 @@ A command line tool to parse and decode JWT (JSON Web Token) payloads with human
 
 ## Installation
 
-### Global Installation (Recommended)
+### From GitHub (Recommended)
 
 ```bash
-npm install -g .
+npm install -g https://github.com/JohnMarkT/parse-jwt
 ```
 
-### Local Installation
+### Local Development
 
 ```bash
-npm install
+git clone https://github.com/JohnMarkT/parse-jwt.git
+cd parse-jwt
+npm install -g .
 ```
 
 ## Usage
