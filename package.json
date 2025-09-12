@@ -1,0 +1,15 @@
+{
+  "name": "parse-jwt",
+  "version": "1.0.0",
+  "description": "Parse payload from JWT",
+  "main": "index.js",
+  "bin": {
+    "parse-jwt": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "John Mark Thrasher",
+  "license": "ISC"
+}
