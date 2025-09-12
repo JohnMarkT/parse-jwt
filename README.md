@@ -40,7 +40,18 @@ parse-jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZ
 
 # Output will show:
 # - Decoded payload with formatted dates
+payload: {
+    iss: 'https://www.domain.com/',
+    sub: 'auth0|jsmith@domain.com',
+    aud: [
+        'https://www.domain.com'
+    ],
+    iat: { originalValue: 1757609862, date: '2025-09-11T16:57:42.000Z' },
+    exp: { originalValue: 1757617062, date: '2025-09-11T18:57:42.000Z' },
+    scope: 'openid profile offline_access'
+}
 # - Token expiration time remaining
+expires in: 1h 33m 46s
 ```
 
 ## Features
