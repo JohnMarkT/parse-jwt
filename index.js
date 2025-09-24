@@ -23,7 +23,7 @@ const modifiedPayload = parseDates(payload);
 const payloadStrPretty = inspect(modifiedPayload, { showHidden: false, depth: null, colors: true });
 
 console.log('payload:', payloadStrPretty);
-console.log('expires in:', getExpiresIn(payload));
+console.log(getExpiresIn(payload));
 
 function parseDates(item) {
     const modifier = (key, value) => {
@@ -75,9 +75,12 @@ function getExpiresIn(payload) {
 
     const now = Math.floor(Date.now() / 1000);
     const expiresSec = exp - now;
-    const hours = Math.floor(expiresSec / 3600);
-    const minutes = Math.floor((expiresSec % 3600) / 60);
-    const seconds = expiresSec % 60;
+    const label = expiresSec > 0 ? 'expires in' : 'expired';
+    const diff = Math.abs(expiresSec);
+    const hours = Math.floor(diff / 3600);
+    const daysAndHours = hours > 24 ? `${Math.floor(hours / 24)}d ${hours % 24}h` : `${hours}h`;
+    const minutes = Math.floor((diff % 3600) / 60);
+    const seconds = diff % 60;
 
-    return `${hours}h ${minutes}m ${seconds}s`;
+    return `${label}: ${daysAndHours} ${minutes}m ${seconds}s`;
 }
